@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" />
+        <title>Waynes Gardening</title>
+
+    </head>
+
+    <body> <br/>
+
+        <h1>Wayne's Gardening</h1>
+        <h2>Garden Transformations and Maintenance.</h2>
+
+        <img id="banner" /><br/>
+        
+        <span>
+            <button>Booking</button> <button>About</button>
+        </span>
+
+        <style src="style.css" type="text/stylesheet"></style>
+        <script>
+
+            function fetchImage (path, id) {
+                fetch(path)
+                .then(response => {
+                    console.log(response);
+                    return response.blob();
+                })
+                .then(blob => {
+                    document.getElementById(id).src = URL.createObjectURL(blob);
+                });
+            }
+
+            fetchImage('lawn-services.jpg', 'banner');
+
+        </script>
+
+    </body>
+
+</html>
